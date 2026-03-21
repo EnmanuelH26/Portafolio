@@ -1,0 +1,27 @@
+@code {
+    [Parameter]
+    public SkillGroup[] SkillGroups { get; set; } = Array.Empty<SkillGroup>();
+}
+
+<section class="section" id="habilidades">
+    <div class="section-header">
+        <p class="eyebrow">Habilidades</p>
+        <h2>Stack y especialidades</h2>
+        <p>Herramientas y areas en las que me muevo con soltura.</p>
+    </div>
+    <div class="skills-grid">
+        @foreach (var group in SkillGroups)
+        {
+            <div class="skill-card">
+                <h3>@group.Title</h3>
+                <div class="tag-grid">
+                    @foreach (var item in group.Items)
+                    {
+                        <span class="tag">@item</span>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</section>
+

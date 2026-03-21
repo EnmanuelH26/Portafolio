@@ -1,0 +1,30 @@
+@code {
+    [Parameter]
+    public ContactLink[] ContactLinks { get; set; } = Array.Empty<ContactLink>();
+}
+
+<section class="section contact" id="contacto">
+    <div class="section-header">
+        <p class="eyebrow">Contacto</p>
+        <h2>Construyamos algo juntos</h2>
+        <p>Comparte tu idea y preparare una propuesta clara de alcance y tiempos.</p>
+    </div>
+    <div class="contact-grid">
+        @foreach (var contact in ContactLinks)
+        {
+            <a class="contact-card" href="@contact.Url" target="_blank" rel="noreferrer noopener">
+                <span class="contact-label">@contact.Label</span>
+                <span class="contact-value">@contact.Value</span>
+                <span class="contact-action">Abrir</span>
+            </a>
+        }
+    </div>
+    <div class="cta-banner">
+        <div>
+            <h3>Listo para tu siguiente lanzamiento</h3>
+            <p>Agenda una llamada corta para entender el proyecto.</p>
+        </div>
+        <a class="button primary" href="mailto:e.hernandezoficial0@gmail.com">Escribeme</a>
+    </div>
+</section>
+
